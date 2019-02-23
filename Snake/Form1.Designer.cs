@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.Button_START = new System.Windows.Forms.Button();
+            this.Button_EXIT = new System.Windows.Forms.Button();
+            this.Button_INIT = new System.Windows.Forms.Button();
+            this.ComboBox_difficult = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -43,46 +44,62 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(500, 500);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
-            // button1
+            // Button_START
             // 
-            this.button1.Location = new System.Drawing.Point(875, 96);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(129, 106);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "开始";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Button_START.Location = new System.Drawing.Point(875, 96);
+            this.Button_START.Name = "Button_START";
+            this.Button_START.Size = new System.Drawing.Size(129, 106);
+            this.Button_START.TabIndex = 1;
+            this.Button_START.Text = "开始";
+            this.Button_START.UseVisualStyleBackColor = true;
+            this.Button_START.Click += new System.EventHandler(this.Button_START_Click);
             // 
-            // button2
+            // Button_EXIT
             // 
-            this.button2.Location = new System.Drawing.Point(875, 314);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(129, 106);
-            this.button2.TabIndex = 1;
-            this.button2.TabStop = false;
-            this.button2.Text = "退出";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.Button_EXIT.Location = new System.Drawing.Point(875, 314);
+            this.Button_EXIT.Name = "Button_EXIT";
+            this.Button_EXIT.Size = new System.Drawing.Size(129, 106);
+            this.Button_EXIT.TabIndex = 1;
+            this.Button_EXIT.TabStop = false;
+            this.Button_EXIT.Text = "退出";
+            this.Button_EXIT.UseVisualStyleBackColor = true;
+            this.Button_EXIT.Click += new System.EventHandler(this.Button_EXIT_Click);
             // 
-            // button3
+            // Button_INIT
             // 
-            this.button3.Location = new System.Drawing.Point(875, 505);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(129, 106);
-            this.button3.TabIndex = 1;
-            this.button3.TabStop = false;
-            this.button3.Text = "初始化";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.Button_INIT.Location = new System.Drawing.Point(875, 505);
+            this.Button_INIT.Name = "Button_INIT";
+            this.Button_INIT.Size = new System.Drawing.Size(129, 106);
+            this.Button_INIT.TabIndex = 1;
+            this.Button_INIT.TabStop = false;
+            this.Button_INIT.Text = "初始化";
+            this.Button_INIT.UseVisualStyleBackColor = true;
+            this.Button_INIT.Click += new System.EventHandler(this.Button_INIT_Click);
+            // 
+            // ComboBox_difficult
+            // 
+            this.ComboBox_difficult.Font = new System.Drawing.Font("宋体", 15.75F);
+            this.ComboBox_difficult.FormattingEnabled = true;
+            this.ComboBox_difficult.Items.AddRange(new object[] {
+            "新手",
+            "老手",
+            "宗师"});
+            this.ComboBox_difficult.Location = new System.Drawing.Point(236, 591);
+            this.ComboBox_difficult.Name = "ComboBox_difficult";
+            this.ComboBox_difficult.Size = new System.Drawing.Size(70, 29);
+            this.ComboBox_difficult.TabIndex = 2;
+            this.ComboBox_difficult.Text = "难度";
+            this.ComboBox_difficult.SelectedIndexChanged += new System.EventHandler(this.ComboBox_difficult_SelectedIndexChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1069, 801);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.ComboBox_difficult);
+            this.Controls.Add(this.Button_INIT);
+            this.Controls.Add(this.Button_EXIT);
+            this.Controls.Add(this.Button_START);
             this.Controls.Add(this.flowLayoutPanel1);
             this.KeyPreview = true;
             this.Name = "Form1";
@@ -96,9 +113,10 @@
         #endregion
 
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button Button_START;
+        private System.Windows.Forms.Button Button_EXIT;
+        private System.Windows.Forms.Button Button_INIT;
+        public System.Windows.Forms.ComboBox ComboBox_difficult;
     }
 }
 

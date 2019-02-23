@@ -13,14 +13,17 @@ namespace Snake
 {
     public partial class Form1 : Form
     {
+        /// <summary>设置静态变量,让其他类访问控件</summary>
+        public static Form1 form1;
         public Form1()
         {
             InitializeComponent();
+            form1 = this;
         }
         Snake snake = new Snake();
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            this.flowLayoutPanel1.BackColor = Color.Gray;
             
 
             this.KeyDown += new KeyEventHandler(Form1_KeyDown);
@@ -29,7 +32,7 @@ namespace Snake
         Thread thread_SnakeHead = null;
    
         /// <summary>开始按钮(焦点在这里)</summary>
-        private void button1_Click(object sender, EventArgs e)
+        private void Button_START_Click(object sender, EventArgs e)
         {
             
             thread_SnakeHead = new Thread(Init_Direction);
@@ -69,7 +72,7 @@ namespace Snake
                     //要在还原尾巴颜色后删除
                     Snake.List_Snake.RemoveAt(0);
                 }
-                Thread.Sleep(200);
+                Thread.Sleep(Snake.Difficult);
                 counter += 1;
                 Console.WriteLine("移动" + counter + "," + "蛇头为" + Snake.List_Snake.Last() + "," +"蛇长"+Snake.List_Snake.Count()+","+"食物"+Snake.Food);
             }
@@ -126,15 +129,17 @@ namespace Snake
 
             }
         }
-        private void button2_Click(object sender, EventArgs e)
+        private void Button_EXIT_Click(object sender, EventArgs e)
         {
             System.Environment.Exit(0);
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void Button_INIT_Click(object sender, EventArgs e)
         {
             snake.Init_Snake();
             Snake.Food = snake.Init_Food();
+            Snake.THE_END = "";
+            Snake.Difficult = snake.Init_Difficult();
             //Snake.Direction = 5;
             this.flowLayoutPanel1.Controls.Clear();
             for (int i = 0; i < 400; i++)
@@ -201,6 +206,11 @@ namespace Snake
                 if (!(Snake.Direction == 2 || Snake.Direction == 3))
                     Snake.Direction = 3;
             }
+        }
+
+        private void ComboBox_difficult_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
         }

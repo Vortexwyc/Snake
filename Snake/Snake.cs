@@ -13,14 +13,17 @@ namespace Snake
         public static List<int> List_Snake = new List<int>();
         /// <summary>食物(食物的集合,根据蛇身动态变化)</summary>
         public static List<int> List_Food = new List<int>();
-        /// <summary>初始化蛇头</summary>
-        public static int SnakeHead;
-        /// <summary>初始化食物</summary>
+        /// <summary>难度</summary>
+        public static int Difficult;
+        /// <summary>食物</summary>
         public static int Food;
         /// <summary>结束语</summary>
         public static string THE_END ;
         /// <summary>移动方向(0123为上下左右)</summary>
         public static int Direction ;
+
+
+
         /// <summary>是否结束(false为结束)</summary>
         public bool IsEND()
         {
@@ -110,7 +113,28 @@ namespace Snake
             return List_Food[ random.Next() % (List_Food.Count)];
 
         }
-
+        /// <summary>初始化难度</summary>
+        public int Init_Difficult()
+        {
+           
+           
+            if (Form1.form1.ComboBox_difficult.SelectedIndex == 0)
+            {
+                return 500;
+            }
+            else if (Form1.form1.ComboBox_difficult.SelectedIndex == 1)
+            {
+                return 250;
+            }
+            else if (Form1.form1.ComboBox_difficult.SelectedIndex == 2)
+            {
+                return 100;
+            }
+            else
+            {
+                return 600;
+            }
+        }
     }
 
 
